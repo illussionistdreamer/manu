@@ -262,3 +262,25 @@
   });
 
 })()
+
+function validate(){
+
+  var uname = document.getElementById("name");
+  var uemail = document.getElementById("email");
+  
+
+     if(uname.value.trim() == "" ) {
+       alert("Username Not Entered");
+       return false;
+     }
+      
+    
+     else if(uemail.value.trim() == ""){
+       alert("Email Not Entered");
+       return false;
+     }
+
+     
+    
+
+}
