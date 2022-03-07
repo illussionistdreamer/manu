@@ -265,22 +265,37 @@
 
 function validate(){
 
-  var uname = document.getElementById("name");
-  var uemail = document.getElementById("email");
-  
-
-     if(uname.value.trim() == "" ) {
-       alert("Username Not Entered");
-       return false;
-     }
-      
+  var uname = document.getElementById("name").value.trim();
+  var uemail = document.getElementById("email").value.trim();
+ 
     
-     else if(uemail.value.trim() == ""){
-       alert("Email Not Entered");
-       return false;
-     }
+  var pattern = /^([a-zA-Z0-9\._]+)@([a-z]+).([a-z]+)(.[a-z]+)$/;
+  var result = pattern.test(uemail);
+
+    
+  if(result==false || uemail == ""){
+    document.getElementById("useremail").innerHTML="Enter a  valid Email Id";
+    return false;
+   }
+
+  else if(uname=="" || !isNaN(uname)){
+    document.getElementById("username").innerHTML="Enter Name(Charecters only)";
+    return false;
+  }
+
+  else{
+    return true;
+  }
+
+
+
+ }
+
+
+
+   
 
      
     
 
-}
+    
